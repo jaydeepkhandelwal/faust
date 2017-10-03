@@ -18,7 +18,7 @@ To achieve it, we create another table called index_rank with following columns 
     CREATE TABLE index_rank_id (
         rank int(11) NOT NULL,
         record_id BIGINT(20) NOT NULL UNIQUE,
-        PRIMARY KEY (user_id, record_id)
+        PRIMARY KEY (rank, record_id)
     ) ENGINE=InnoDB;
 
 
