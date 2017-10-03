@@ -37,6 +37,7 @@ Config File - /src/main/resources/Faust.yml
 Sql Schema - faust.sql
 DB name - faust
 
+Test class -  /src/test/java/com/mt/faust/resource/CRUDResourceTest.java
 
 APIS signature -
 
