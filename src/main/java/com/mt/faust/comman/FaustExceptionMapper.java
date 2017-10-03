@@ -18,7 +18,7 @@ public class FaustExceptionMapper implements ExceptionMapper<Exception> {
 
         if (exception instanceof FaustException) {
             Integer statusCode = ((FaustException) exception).getErrorCode().getStatusCode();
-            String errorMessage = new FlurryError(exception.getMessage()).toString();
+            String errorMessage = new FaustError(exception.getMessage()).toString();
             return Response.status(statusCode).entity(errorMessage).type(MediaType.APPLICATION_JSON)
                 .build();
         } else if (exception instanceof TimeoutException) {
@@ -30,11 +30,11 @@ public class FaustExceptionMapper implements ExceptionMapper<Exception> {
 
 }
 
-class FlurryError {
+class FaustError {
 
     private String message;
 
-    public FlurryError(String message) {
+    public FaustError(String message) {
         this.setMessage(message);
     }
 
