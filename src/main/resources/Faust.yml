@@ -1,0 +1,41 @@
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      threshold: ALL
+      timeZone: Asia/Kolkata
+      logFormat: "%d [%thread] %-5level %c{15} - [%X{X-Transaction-Key} - %X{X-Request-Key}] - %msg%n%rEx"
+
+server:
+  adminConnectors:
+    -
+      port: 5401
+      type: http
+  adminContextPath: /admin
+  applicationConnectors:
+    -
+      port: 5400
+      type: http
+  rootPath: /*
+  type: default
+
+
+database:
+  jdbcUrl: jdbc:mysql://localhost:3306/faust?autoReconnect=true&characterEncoding=UTF-8&useLegacyDatetimeCode=false&serverTimezone=Asia/Kolkata&useSSL=false
+  username: root
+  password: root
+  minPoolSize: 10
+  initialPoolSize: 10
+  maxPoolSize: 50
+  acquireIncrement: 5
+  maxIdleTime: 3600
+  maxIdleTimeExcessConnections: 300
+  unreturnedConnectionTimeout: 1800
+  idleConnectionTestPeriod: 100
+  testConnectionOnCheckin: true
+  testConnectionOnCheckout: true
+  acquireRetryAttempts: 4
+
+swagger:
+  resourcePackage: com.mt.faust.resource
+
