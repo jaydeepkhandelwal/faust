@@ -1,8 +1,6 @@
 package com.mt.faust;
 
-/**
- * Created by jaydeep.k on 03/10/17.
- */
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
@@ -22,7 +20,7 @@ import org.apache.commons.lang3.text.StrSubstitutor;
 
 
 /**
- * Created by jaydeep.k on 08/02/16.
+ * Created by jaydeep.k on 03/10/17.
  */
 @Slf4j
 public class FaustApplication extends Application<FaustConfiguration> {
